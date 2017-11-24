@@ -2,12 +2,15 @@
   <div>
     <p>你好世界</p>
     <p>{{b}}</p>
+    <p>{{play}}</p>
+
   </div>
 </template>
 
 <script>
 import {eventBus} from '@/js/bus'
-import {mapGetters} from 'vuex'
+import {mapGetters, mapActions} from 'vuex'
+
 export default {
   data() {
     return {
@@ -22,9 +25,14 @@ export default {
     }, 10);
   },
   methods: {
-    // ...mapGetters([
-    //   // 'TEST_PLAY'
-    // ])
+    selectItem(id) {
+        this.selectPlay({
+          id
+        })
+      },
+    // ...mapActions([
+    //     'selectPlay'
+    //   ])
   },
   computed: {
     // ...mapGetters([
